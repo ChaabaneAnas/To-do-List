@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  background-color: rgb(218, 214, 214);
+  height: 100vh;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rm-decoration {
+  list-style: none;
+  text-decoration: none;
+}
+
+ul {
+  padding: 30px;
+  background-color: white;
+  width: 40%;
+  text-align: left;
+}
