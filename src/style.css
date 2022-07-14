@@ -15,9 +15,24 @@ body {
   text-decoration: none;
 }
 
-ul {
+section {
   padding: 30px;
   background-color: white;
   width: 40%;
   text-align: left;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+input {
+  border: none;
+  width: 100%;
+}
+
+li,input {
+  padding: 6px;
+  border-bottom: 1px solid rgb(211, 210, 210);
 }
