@@ -15,7 +15,7 @@ body {
   text-decoration: none;
 }
 
-section {
+form {
   padding: 30px;
   background-color: white;
   width: 40%;
@@ -40,3 +40,5 @@ input {
 }
 
 .input { width: 100%; }
+
+li input:checked + label { text-decoration: line-through; } 
