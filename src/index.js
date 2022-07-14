@@ -15,7 +15,7 @@ const populate = () => {
   sortTasks.forEach((task) => {
     const ListWrapper = document.querySelector('.tdList');
     const ListElement = document.createElement('li');
-    ListElement.textContent = `${task.description}`;
+    ListElement.innerHTML = `<input id="task" type="checkbox"><label for="task"><span class="checkbox"></span>${task.description}</label>`;
     ListWrapper.appendChild(ListElement);
   });
 };
