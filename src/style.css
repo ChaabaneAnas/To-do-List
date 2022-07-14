@@ -32,10 +32,11 @@ input {
   width: auto;
 }
 
-li,input {
+li,
+input {
   padding: 6px;
   border-bottom: 1px solid rgb(211, 210, 210);
   display: flex;
 }
 
-.input {width: 100%;}
+.input { width: 100%; }
