@@ -1,5 +1,6 @@
  /* eslint-disable */
 
+import { store } from "../../AwesomeBooksEs6/modules/store";
 import "./style.css";
 
 class Store {
@@ -18,9 +19,9 @@ class Store {
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 
-  static deleteTask = () => {
+  static deleteTask = (de) => {
     const Tasks = this.getTasks();
-    Tasks.slice(index, 1);
+    Tasks.splice(de, 1);
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 }
@@ -29,8 +30,8 @@ class Store {
   static addTask = (task) => {
     const ListWrapper = document.querySelector('.tdList');
     const ListElement = document.createElement('li');
-    ListElement.innerHTML = `<input id="task" type="checkbox">
-    <label for="task"><span class="checkbox"></span>${task.description}</label>`;
+    ListElement.innerHTML = `<div class = "flex"><input id="task" type="checkbox">
+    <label for="task"><span class="checkbox"></span>${task.description}</label></div><i class="bi bi-three-dots-vertical"></i>`
     ListWrapper.appendChild(ListElement);
   }
 
@@ -72,7 +73,20 @@ document.querySelectorAll('#task').forEach((el, i) => {
   const checked = document.querySelectorAll('#task')
   Tasks[i].completed = checked[i].checked;
   localStorage.setItem('Tasks', JSON.stringify(Tasks));
-  console.log(Tasks[i])
  })
 })
 
+ const parent = document.querySelector('.tdList');
+ parent.addEventListener('click', (e) => {
+  if(e.target.classList.contains('bi')){
+  e.target.classList.remove('bi-three-dots-vertical');
+  e.target.classList.add('bi-trash')
+}
+})
+
+const removeBtns = document.querySelectorAll('.bi-trash')
+removeBtns.forEach((removeBtn, i) => {
+  removeBtn.addEventListener('click', (e) => {
+    console.log(e.target)
+  })
+})
