@@ -19,19 +19,27 @@ class Store {
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 
-  static deleteTask = (de) => {
+  static deleteTask = (el) => {
     const Tasks = this.getTasks();
-    Tasks.splice(de, 1);
+    Tasks.forEach((task, i) => {
+      if (el === task.index) {
+        Tasks.splice(i, 1);
+      }
+    });
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
-}
+
+  }
+
 
  class Ui { 
   static addTask = (task) => {
     const ListWrapper = document.querySelector('.tdList');
     const ListElement = document.createElement('li');
+    ListElement.setAttribute('data-index', task.index)
     ListElement.innerHTML = `<div class = "flex"><input id="task" type="checkbox">
-    <label for="task"><span class="checkbox"></span>${task.description}</label></div><i class="bi bi-three-dots-vertical"></i>`
+    <label for="task"><span class="checkbox"></span>${task.Description}
+    </label></div><i class="bi bi-trash"></i>`
     ListWrapper.appendChild(ListElement);
   }
 
@@ -41,11 +49,17 @@ class Store {
       this.addTask(task);
     });
   }
+
+  static removeTask = () => {
+    document.querySelector('.bi-trash').addEventListener('click', (e) => {
+    e.target.parentElement.remove
+    })
+  }
 }
 
 class Task {
   constructor(description, index) {
-    this.description = description;
+    this.Description = description;
     this.completed = false;
     this.index = index;
   }
@@ -66,7 +80,17 @@ document.querySelector('form').addEventListener('submit', (e) => {
 })
 
 //delete task//
-//document.querySelector('.tdList').addEventListener('change', () => console.log('change'));//
+const parent = document.querySelector('.tdList');
+parent.addEventListener('click', (e) => {
+  if(e.target.classList.contains('bi-trash')){
+    Store.deleteTask(Number(e.target.parentElement.dataset.index))
+    console.log(e.target.previousElementSibling.lastElementChild.textContent)
+    e.target.parentElement.remove()
+
+  }
+})
+
+
 document.querySelectorAll('#task').forEach((el, i) => {
  el.addEventListener('change',() => {
   const Tasks = Store.getTasks();
@@ -76,17 +100,5 @@ document.querySelectorAll('#task').forEach((el, i) => {
  })
 })
 
- const parent = document.querySelector('.tdList');
- parent.addEventListener('click', (e) => {
-  if(e.target.classList.contains('bi')){
-  e.target.classList.remove('bi-three-dots-vertical');
-  e.target.classList.add('bi-trash')
-}
-})
 
-const removeBtns = document.querySelectorAll('.bi-trash')
-removeBtns.forEach((removeBtn, i) => {
-  removeBtn.addEventListener('click', (e) => {
-    console.log(e.target)
-  })
-})
+

@@ -1,4 +1,5 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"); 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
 
 body {
   text-align: center;
@@ -44,6 +45,7 @@ input {
 .flex {
   display: flex;
 }
+
 li {
   display: flex;
   justify-content: space-between;
@@ -55,4 +57,4 @@ li {
 
 .input { width: 100%; }
 
-li input:checked + label { text-decoration: line-through; } 
+li input:checked + label { text-decoration: line-through; }
