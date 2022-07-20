@@ -1,0 +1,67 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+body {
+  text-align: center;
+  background-color: rgb(218, 214, 214);
+  height: 100vh;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rm-decoration {
+  list-style: none;
+  text-decoration: none;
+}
+
+form {
+  padding: 30px;
+  background-color: white;
+  width: 40%;
+  text-align: left;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 17px;
+}
+
+input {
+  border: none;
+  width: auto;
+}
+
+li,
+input {
+  padding: 6px;
+  border-bottom: 1px solid rgb(211, 210, 210);
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bi {
+  cursor: pointer;
+}
+
+.input { width: 100%; }
+
+li input:checked + label { text-decoration: line-through; }
+
+.ClearC {
+  padding: 4%;
+}
+
+a {
+  color: black;
+}
