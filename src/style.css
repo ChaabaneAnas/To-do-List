@@ -26,7 +26,7 @@ form {
 
 ul {
   padding-left: 0;
-  margin: 0;
+  margin-bottom: 17px;
 }
 
 input {
@@ -57,3 +57,11 @@ li {
 .input { width: 100%; }
 
 li input:checked + label { text-decoration: line-through; }
+
+.ClearC {
+  padding: 4%;
+}
+
+a {
+  color: black;
+}

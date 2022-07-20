@@ -22,6 +22,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
   const task = new Task(input, Tasks.length + 1);
   Store.setTask(task);
   Ui.addTask(task);
+  document.querySelector('input').value = '';
 });
 
 // delete task//
@@ -40,4 +41,11 @@ document.querySelectorAll('#task').forEach((el, i) => {
     Tasks[i].completed = checked[i].checked;
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   });
+});
+
+document.querySelector('a').addEventListener('click', () => {
+  let Tasks = Store.getTasks();
+  Tasks = Tasks.filter((task) => !task.completed);
+  localStorage.setItem('Tasks', JSON.stringify(Tasks))
+  location.reload();
 });

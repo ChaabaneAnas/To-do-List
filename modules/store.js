@@ -21,6 +21,7 @@ export default class Store {
       if (el === task.index) {
         Tasks.splice(i, 1);
       }
+      Tasks[i].index = i + 1;
     });
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
