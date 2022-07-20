@@ -46,6 +46,7 @@ document.querySelectorAll('#task').forEach((el, i) => {
 document.querySelector('a').addEventListener('click', () => {
   let Tasks = Store.getTasks();
   Tasks = Tasks.filter((task) => !task.completed);
-  localStorage.setItem('Tasks', JSON.stringify(Tasks))
+  localStorage.setItem('Tasks', JSON.stringify(Tasks));
+  // eslint-disable-next-line
   location.reload();
 });
