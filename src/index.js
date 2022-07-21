@@ -1,5 +1,6 @@
 import Store from '../modules/store';
 import Ui from '../modules/ui';
+import Update from '../modules/user';
 import './style.css';
 
 class Task {
@@ -13,7 +14,7 @@ class Task {
 // const sortTasks = Tasks.slice(0);//
 // sortTasks.sort((a, b) => a.index - b.index);//
 
-document.addEventListener('DOMContentLoaded', Ui.DisplayTasks());
+document.addEventListener('DOMContentLoaded', Ui.DisplayTasks(), Update.UpdateI());
 // add task//
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -23,6 +24,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
   Store.setTask(task);
   Ui.addTask(task);
   document.querySelector('input').value = '';
+  Update.UpdateI();
 });
 
 // delete task//
@@ -31,6 +33,8 @@ parent.addEventListener('click', (e) => {
   if (e.target.classList.contains('bi-trash')) {
     Store.deleteTask(Number(e.target.parentElement.dataset.index));
     e.target.parentElement.remove();
+    Update.UpdateI();
+    Ui.updateD();
   }
 });
 
@@ -49,4 +53,16 @@ document.querySelector('a').addEventListener('click', () => {
   localStorage.setItem('Tasks', JSON.stringify(Tasks));
   // eslint-disable-next-line
   location.reload();
+
+});
+
+const edits = document.querySelectorAll('.edit');
+edits.forEach((edit, i) => {
+  const Tasks = Store.getTasks();
+  edit.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      Tasks[i].Description = edits[i].value;
+    }
+    localStorage.setItem('Tasks', JSON.stringify(Tasks));
+  });
 });

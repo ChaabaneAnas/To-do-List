@@ -1,25 +1,30 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do List
 
-> Description the project.
+> This a To Do List, 
+where u can add tasks remove them and edit tasks,
+everything is stored in localstorage..
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Html Css and Javascript
+- No Frameworks
+- No Technologies used
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://chaabaneanas.github.io/To-do-List/)
 
 
 ## Getting Started
+To get a Local copy
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+copy this link: git@github.com:ChaabaneAnas/To-do-List.git
+open your cmd
+run git clone (the copyed link)
+cd to your root and run code . 
 
 
 To get a local copy up and running follow these simple example steps.
@@ -40,17 +45,13 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **chaabaneAnas**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
