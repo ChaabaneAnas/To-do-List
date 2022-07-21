@@ -66,4 +66,3 @@ edits.forEach((edit, i) => {
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   });
 });
-localStorage.setItem('Tasks', JSON.stringify(Tasks));
