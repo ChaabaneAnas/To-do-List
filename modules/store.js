@@ -24,6 +24,4 @@ export default class Store {
     });
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
-
-  static u
 }

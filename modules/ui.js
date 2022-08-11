@@ -1,5 +1,6 @@
 import Store from './store';
 
+const ListWrapper = document.querySelector('.tdList');
 export default class Ui {
   static updateD = () => {
     const Tasks = Store.getTasks();
@@ -10,25 +11,19 @@ export default class Ui {
   }
 
   static addTask = (task) => {
-    const ListWrapper = document.querySelector('.tdList');
     const ListElement = document.createElement('li');
     ListElement.setAttribute('data-index', task.index);
-    ListElement.innerHTML = ` <div class = "flex"><input id="task" type="checkbox">
+    ListElement.innerHTML = ` <div class = "flex"><input id="checkbs" type="checkbox">
     <span class="checkbox"></span><input type="text" class = "edit" value="${task.Description}">
      </div><i class="bi bi-trash"></i>`;
     ListWrapper.appendChild(ListElement);
   }
 
   static DisplayTasks = () => {
+    ListWrapper.innerHTML = '';
     const Tasks = Store.getTasks();
     Tasks.forEach((task) => {
       this.addTask(task);
-    });
-  }
-
-  static removeTask = () => {
-    document.querySelector('.bi-trash').addEventListener('click', (e) => {
-      e.target.parentElement.remove();
     });
   }
 }
