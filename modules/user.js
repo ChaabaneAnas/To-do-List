@@ -8,3 +8,4 @@ export default class Update {
     });
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
+}
