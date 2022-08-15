@@ -8,10 +8,4 @@ export default class Update {
     });
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
-
-  static UpdateT = (el, e) => {
-    const Tasks = Store.getTasks();
-    Tasks[Number(e.target.parentElement.parentElement.dataset.index) - 1].Description = el;
-    localStorage.setItem('Tasks', JSON.stringify(Tasks));
-  }
 }
