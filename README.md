@@ -15,7 +15,7 @@ everything is stored in localstorage..
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://chaabaneanas.github.io/To-do-List/dist/)
+[Live Demo Link](https://chaabaneanas.github.io/To-do-List/#)
 
 
 ## Getting Started
