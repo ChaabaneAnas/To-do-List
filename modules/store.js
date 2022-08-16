@@ -16,12 +16,8 @@ export default class Store {
   }
 
   static deleteTask = (el) => {
-    const Tasks = this.getTasks();
-    Tasks.forEach((task, i) => {
-      if (el === task.index) {
-        Tasks.splice(i, 1);
-      }
-    });
+    let Tasks = this.getTasks();
+    Tasks=Tasks.filter(task => task.index !== el );
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 }
