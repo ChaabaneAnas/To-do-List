@@ -19,7 +19,7 @@ export default class Store {
 
   static deleteTask = (el) => {
     let Tasks = this.getTasks();
-    Tasks = Tasks.filter((task)=> task.index !== el);
+    Tasks = Tasks.filter((task) => task.index !== el);
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 }
