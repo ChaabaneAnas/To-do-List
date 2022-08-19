@@ -5,7 +5,9 @@
   "main": "index.js",
   "jest": {
     "resetMocks": false,
-    "setupFiles": ["jest-localstorage-mock"]
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   },
   "scripts": {
     "test": "jest --coverage",
@@ -38,5 +40,8 @@
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^28.1.3"
   }
 }

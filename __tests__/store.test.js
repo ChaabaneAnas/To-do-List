@@ -1,32 +1,74 @@
+/* eslint-disable no-underscore-dangle */
+/**
+ * @jest-environment jsdom
+ */
+
 import Store from '../modules/store';
 
-describe('storeTesting', () => {
+function taskElem(task) {
+  const html = `<div class="todo-item">
+          <div>
+          <input id="${task.index}" class="todo-check" type="checkbox" ${task.completed} />
+          <input id="${task.index}" class="todo-edit" type="text" value="${task.Description}" />
+          </div>
+          <button id="${task.index}" class="remove-btn"> <i class="fas fa-trash"></i></button>
+          </div>
+      `;
+  return html;
+}
+
+describe('storeTesting add & remove', () => {
   test('addFunctionality', () => {
-    const task = { Description: 'testingAdd', index: 1, completed: false };
+    const ListHtml = `
+    <ul class="todo-container">
+    </ul>
+  `;
+    document.body.insertAdjacentHTML('afterbegin', ListHtml);
+    const containerElem = document.querySelector('.todo-container');
+
+    let task = { Description: 'testingAdd1', index: 1, completed: false };
     Store.setTask(task);
     const Tasks = Store.getTasks();
+    containerElem.insertAdjacentHTML('afterbegin', taskElem(task));
+
     expect(localStorage.setItem).toHaveBeenLastCalledWith('Tasks', JSON.stringify(Tasks));
-    expect(localStorage.__STORE__.Tasks).toBe(JSON.stringify(Tasks));
+    expect(JSON.parse(localStorage.__STORE__.Tasks)[0]).toEqual((task));
     expect(Object.keys(localStorage.__STORE__).length).toBe(1);
+    expect(containerElem.children.length).toBe(1);
+
+    task = { Description: 'testingAdd2', index: 2, completed: false };
+    Store.setTask(task);
+    containerElem.insertAdjacentHTML('afterbegin', taskElem(task));
+
+    expect(JSON.parse(localStorage.__STORE__.Tasks)[1]).toEqual((task));
+    expect(containerElem.children.length).toBe(2);
+
+    task = { Description: 'testingAdd3', index: 3, completed: false };
+    Store.setTask(task);
+    containerElem.insertAdjacentHTML('afterbegin', taskElem(task));
+
+    expect(JSON.parse(localStorage.__STORE__.Tasks)[2]).toEqual((task));
+    expect(containerElem.children.length).toBe(3);
   });
 
-  test('deleteFunctionality', () => {
-    document.body.innerHTML = `
-    <ul>
-      <li data-index="1"> <button class ="delete">delete</button></li>
-      <li data-index="2"> <button class ="delete">delete</button></li>
-      <li data-index="3">  <button class ="delete">delete</button></li>
-    </ul>`;
+  test('Number of items should be 2 ', () => {
+    const removeBtns = document.querySelectorAll('.remove-btn');
+    removeBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.target.parentElement.remove();
+      });
+    });
 
-    const buttons = document.querySelectorAll('.delete')
-    buttons.forEach((button) => button.addEventListener('click', (e) => {
-      Store.deleteTask(Number(e.target.parentElement.dataset.index));
-    }));
+    document.querySelector('button[id="2"]').click();
+    Store.deleteTask(2);
+    const containerElem = document.querySelector('.todo-container');
+    expect(containerElem.children.length).toBe(2);
+  });
 
-    const button = shallow(<Button onClick={
-      Store.deleteTask(Number(e.target.parentElement.dataset.index));
-    }>Ok</Button>);
-     button.find('button').simulate('click'); expect(mockCallBack.mock.calls.length).toEqual(1);
-    
+  test('Number of items should be 2 ', () => {
+    document.querySelector('button[id="3"]').click();
+    Store.deleteTask(3);
+    const containerElem = document.querySelector('.todo-container');
+    expect(containerElem.children.length).toBe(1);
   });
 });

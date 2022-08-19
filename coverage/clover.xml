@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660913234702" clover="3.2.0">
-  <project timestamp="1660913234702" name="All files">
-    <metrics statements="13" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="2" elements="19" coveredelements="14" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+<coverage generated="1660934752749" clover="3.2.0">
+  <project timestamp="1660934752750" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="19" coveredelements="19" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
     <file name="store.js" path="/home/anas/repos/Microverse/Full TimeStudent/To-do-List/modules/store.js">
-      <metrics statements="13" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="2"/>
+      <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <line num="2" count="1" type="stmt"/>
-      <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="4" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="5" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="9" count="6" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="22" count="0" type="stmt"/>
-      <line num="23" count="0" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="22" count="5" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
