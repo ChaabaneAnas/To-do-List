@@ -1,6 +1,6 @@
 import Store from '../modules/store';
 import Ui from '../modules/ui';
-import Update from '../modules/user';
+import Update from '../modules/Update';
 import './style.css';
 
 class Task {
@@ -34,29 +34,24 @@ parent.addEventListener('click', (e) => {
   }
 });
 
-document.querySelectorAll('#checkbs').forEach((checkb, i) => {
-  checkb.addEventListener('change', () => {
-    const Tasks = Store.getTasks();
-    const checked = document.querySelectorAll('#checkbs');
-    Tasks[i].completed = checked[i].checked;
-    localStorage.setItem('Tasks', JSON.stringify(Tasks));
-  });
+parent.addEventListener('change', (e) => {
+  if (e.target.classList.contains('box')) {
+    const id = Number(e.target.parentElement.parentElement.dataset.index) - 1;
+    Update.updateStatue(e, id);
+  }
 });
 
 document.querySelector('a').addEventListener('click', () => {
-  let Tasks = Store.getTasks();
-  Tasks = Tasks.filter((task) => !task.completed);
-  localStorage.setItem('Tasks', JSON.stringify(Tasks));
+  Update.clear();
   Ui.DisplayTasks();
 });
 
 parent.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    const Tasks = Store.getTasks();
     if (e.target.classList.contains('edit')) {
-      const { value } = e.target;
-      Tasks[Number(e.target.parentElement.parentElement.dataset.index) - 1].Description = value;
+      const newValue = e.target.value;
+      const id = Number(e.target.parentElement.parentElement.dataset.index) - 1;
+      Update.updateValue(id, newValue);
     }
-    localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 });
