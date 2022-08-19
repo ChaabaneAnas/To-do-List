@@ -2,6 +2,8 @@
  * @jest-environment jsdom
  */
 
+/* eslint-disable no-underscore-dangle */
+
 import Store from '../modules/store';
 
 function taskElem(task) {
