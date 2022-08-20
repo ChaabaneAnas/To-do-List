@@ -65,11 +65,6 @@ describe('storeTesting add & remove', () => {
     const containerElem = document.querySelector('.todo-container');
     expect(containerElem.children.length).toBe(2);
   });
-
-  test('Number of items should be 2 ', () => {
-    document.querySelector('button[id="3"]').click();
-    Store.deleteTask(3);
-    const containerElem = document.querySelector('.todo-container');
-    expect(containerElem.children.length).toBe(1);
-  });
 });
+
+module.exports = Store;
