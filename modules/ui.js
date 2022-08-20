@@ -13,7 +13,7 @@ export default class Ui {
   static addTask = (task) => {
     const ListElement = document.createElement('li');
     ListElement.setAttribute('data-index', task.index);
-    ListElement.innerHTML = ` <div class = "flex"><input id="checkbs" type="checkbox">
+    ListElement.innerHTML = ` <div class = "flex"><input class ="box" type="checkbox">
     <span class="checkbox"></span><input type="text" class = "edit" value="${task.Description}">
      </div><i class="bi bi-trash"></i>`;
     ListWrapper.appendChild(ListElement);
