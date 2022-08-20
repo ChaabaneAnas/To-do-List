@@ -4,7 +4,8 @@ const ListWrapper = document.querySelector('.tdList');
 export default class Ui {
   static updateD = () => {
     const Tasks = Store.getTasks();
-    Tasks.forEach((task, i) => {
+    // eslint-disable-next-line array-callback-return
+    Tasks.map((task, i) => {
       const ListElements = document.querySelectorAll('li');
       ListElements[i].setAttribute('data-index', task.index);
     });
@@ -22,8 +23,6 @@ export default class Ui {
   static DisplayTasks = () => {
     ListWrapper.innerHTML = '';
     const Tasks = Store.getTasks();
-    Tasks.forEach((task) => {
-      this.addTask(task);
-    });
-  }
+    Tasks.map((task) => this.addTask(task));
+  };
 }

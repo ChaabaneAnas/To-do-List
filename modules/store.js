@@ -15,8 +15,6 @@ export default class Store {
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 
-  // [fixed] Do i follow js best practice
-
   static deleteTask = (el) => {
     let Tasks = this.getTasks();
     Tasks = Tasks.filter((task) => task.index !== el);

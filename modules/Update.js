@@ -15,12 +15,12 @@ export default class Update {
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
   }
 
-  static updateStatue = (id, newValue) => {
+  static updateStatue = (id, checked) => {
     let Tasks = Store.getTasks();
     // eslint-disable-next-line array-callback-return
     Tasks = Tasks.map((task, i) => {
       if (id === i) {
-        task.completed = e.target.checked;
+        task.completed = checked;
         localStorage.setItem('Tasks', JSON.stringify(Tasks));
       }
     });
