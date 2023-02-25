@@ -28,6 +28,7 @@ body {
   background: url("assests/background.jpg") no-repeat center center / cover fixed content-box;
   text-align: center;
   height: 100vh;
+  width: 100%;
 }
 
 form {
@@ -35,7 +36,7 @@ form {
   padding: 1.9rem;
   background-color: white;
   text-align: left;
-  width: 50%;
+  max-width: 60%;
 }
 
 .header {
@@ -46,6 +47,7 @@ form {
 }
 
 .addTask {
+  gap: 1rem;
   margin-top: 1rem;
   padding: 0 .6rem;
 }
@@ -82,6 +84,10 @@ li {
 li input:checked~.edit {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+.edit {
+  width: 100%;
 }
 
 .ClearC {
@@ -121,4 +127,11 @@ a {
 .plus-button:hover:before,
 .plus-button:hover:after {
   background-color: #eee;
+}
+
+@media screen and (max-width: 768px) {
+  from {
+    width: 100%;
+  }
+
 }
