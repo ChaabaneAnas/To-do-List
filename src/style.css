@@ -79,7 +79,7 @@ li {
   cursor: pointer;
 }
 
-li input:checked {
+li input:checked~.edit {
   text-decoration: line-through;
   opacity: 0.5;
 }
