@@ -4,6 +4,8 @@ import Update from '../modules/Update';
 import './style.css';
 
 class Task {
+  static counter = 0;
+
   constructor(description, index) {
     this.Description = description;
     this.completed = false;
@@ -11,7 +13,11 @@ class Task {
   }
 }
 
-document.addEventListener('DOMContentLoaded', Ui.DisplayTasks(), Update.UpdateI());
+document.addEventListener(
+  'DOMContentLoaded',
+  Ui.DisplayTasks(),
+  Update.UpdateI(),
+);
 // add task//
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -34,18 +40,22 @@ parent.addEventListener('click', (e) => {
   }
 });
 
+// checbox control //
 parent.addEventListener('change', (e) => {
   if (e.target.classList.contains('box')) {
     const id = Number(e.target.parentElement.parentElement.dataset.index) - 1;
-    Update.updateStatue(e, id);
+    Update.updateStatue(id);
   }
 });
 
+// clear //
 document.querySelector('a').addEventListener('click', () => {
   Update.clear();
   Ui.DisplayTasks();
 });
 
+
+//edit value //
 parent.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     if (e.target.classList.contains('edit')) {
