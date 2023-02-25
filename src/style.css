@@ -1,9 +1,17 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
 
-body {
-  text-align: center;
-  background-color: rgb(218, 214, 214);
-  height: 100vh;
+:root {
+  --primary: #007bff;
+  --secondary: #006db5;
+}
+
+.rm-decoration {
+  list-style: none;
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
 }
 
 .flex-center {
@@ -12,41 +20,58 @@ body {
   align-items: center;
 }
 
-.rm-decoration {
-  list-style: none;
-  text-decoration: none;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("assests/background.jpg") no-repeat center center / cover fixed content-box;
+  text-align: center;
+  height: 100vh;
 }
 
 form {
-  padding: 30px;
+  border-radius: 5px;
+  padding: 1.9rem;
   background-color: white;
-  width: 40%;
   text-align: left;
+  width: 50%;
+}
+
+.header {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--secondary);
+  color: white;
+}
+
+.addTask {
+  margin-top: 1rem;
+  padding: 0 .6rem;
+}
+
+.input {
+  width: 100%;
 }
 
 ul {
   padding-left: 0;
-  margin-bottom: 17px;
+  margin-bottom: 1.1rem;
 }
 
 input {
   border: none;
-  width: auto;
 }
 
 li,
 input {
   padding: 6px;
-  border-bottom: 1px solid rgb(211, 210, 210);
   display: flex;
 }
 
-.flex {
-  display: flex;
-}
+
 
 li {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -54,14 +79,46 @@ li {
   cursor: pointer;
 }
 
-.input { width: 100%; }
-
-li input:checked + label { text-decoration: line-through; }
+li input:checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 
 .ClearC {
   padding: 4%;
 }
 
 a {
-  color: black;
+  color: var(--secondary);
+}
+
+.plus-button {
+  width: 40px;
+  height: 40px;
+  background-color: #0077cc;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.plus-button:before,
+.plus-button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.plus-button:before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.plus-button:hover:before,
+.plus-button:hover:after {
+  background-color: #eee;
 }
