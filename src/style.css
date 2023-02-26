@@ -49,7 +49,7 @@ form {
 .addTask {
   gap: 1rem;
   margin-top: 1rem;
-  padding: 0 .6rem;
+  padding: 0 0.6rem;
 }
 
 .input {
@@ -71,8 +71,6 @@ input {
   display: flex;
 }
 
-
-
 li {
   justify-content: space-between;
 }
@@ -81,13 +79,13 @@ li {
   cursor: pointer;
 }
 
-li input:checked~.edit {
-  text-decoration: line-through;
-  opacity: 0.5;
-}
-
 .edit {
   width: 100%;
+}
+
+li input:checked ~ .edit {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .ClearC {
@@ -101,15 +99,15 @@ a {
 .plus-button {
   width: 40px;
   height: 40px;
-  background-color: #0077cc;
+  background-color: #07c;
   border: none;
   outline: none;
   cursor: pointer;
   position: relative;
 }
 
-.plus-button:before,
-.plus-button:after {
+.plus-button::before,
+.plus-button::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -120,12 +118,12 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.plus-button:before {
+.plus-button::before {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.plus-button:hover:before,
-.plus-button:hover:after {
+.plus-button:hover::before,
+.plus-button:hover::after {
   background-color: #eee;
 }
 
@@ -133,5 +131,4 @@ a {
   from {
     width: 100%;
   }
-
 }

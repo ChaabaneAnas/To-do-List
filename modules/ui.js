@@ -5,9 +5,7 @@ export default class Ui {
   static updateD = () => {
     const ListElements = document.querySelectorAll('li');
     const Tasks = Store.getTasks();
-    Tasks.map((task, i) =>
-      ListElements[i].setAttribute('data-index', task.index)
-    );
+    Tasks.map((task, i) => ListElements[i].setAttribute('data-index', task.index));
   };
 
   static addTask = (task) => {

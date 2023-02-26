@@ -54,8 +54,7 @@ document.querySelector('a').addEventListener('click', () => {
   Ui.DisplayTasks();
 });
 
-
-//edit value //
+// edit value //
 parent.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     if (e.target.classList.contains('edit')) {
