@@ -4,6 +4,10 @@
 
  This is a CRUD (create, read, update and delete) app built where users can create, update and delete specific day-to-day tasks as they wish. The app is built using Webpack and served with the Webpack dev server
 
+## Overview
+![image](https://user-images.githubusercontent.com/99597333/222122320-8fb4f852-875e-4f58-9592-c400cf0221a5.png)
+
+
 ## Built With
 
 - HTML
