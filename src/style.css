@@ -36,7 +36,7 @@ form {
   padding: 1.9rem;
   background-color: white;
   text-align: left;
-  max-width: 60%;
+  width: 50%;
 }
 
 .header {
@@ -83,7 +83,7 @@ li {
   width: 100%;
 }
 
-li input:checked ~ .edit {
+li input:checked~.edit {
   text-decoration: line-through;
   opacity: 0.5;
 }
